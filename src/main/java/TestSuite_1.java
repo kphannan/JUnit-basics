@@ -5,13 +5,16 @@ import org.junit.*;
  */
 public class TestSuite_1 {
 
-    @BeforeClass
+    @Rule
+    public Retry retry = new Retry( 3 );
+
+//    @BeforeClass
     public static void beforeClass()
     {
         System.out.println( "TestSuite_1 Before class");
     }
 
-    @Before
+//    @Before
     public void beforeTest()
     {
         System.out.println( "TestSuite_1 Before test");
@@ -21,6 +24,7 @@ public class TestSuite_1 {
     public void test1()
     {
         System.out.println( "TestSuite_1 Test 1");
+        Assert.assertTrue( false );
     }
 
     @Test
@@ -30,13 +34,13 @@ public class TestSuite_1 {
     }
 
 
-    @After
+//    @After
     public void afterTest()
     {
         System.out.println( "TestSuite_1 After test");
     }
 
-    @AfterClass
+//    @AfterClass
     public static void afterClass()
     {
         System.out.println( "TestSuite_1 After class");
