@@ -1,3 +1,5 @@
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.*;
 
 /**
@@ -5,16 +7,19 @@ import org.junit.*;
  */
 public class TestSuite_2 extends TestRules {
 
+    private static Logger log = LogManager.getLogger();
+
+
     @Test
     public void test1()
     {
-        System.out.println( "TestSuite_2 Test 1");
+        log.trace( "TestSuite_2 Test 1");
     }
 
     @Test
     public void test2()
     {
-        System.out.println( "TestSuite_2 Test 2");
+        log.trace( "TestSuite_2 Test 2");
     }
 
 }

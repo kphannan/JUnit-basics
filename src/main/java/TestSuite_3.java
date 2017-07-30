@@ -1,3 +1,5 @@
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 import org.junit.Test;
@@ -14,6 +16,9 @@ import java.util.Collection;
 @RunWith(Parameterized.class)
 public class TestSuite_3 {
 
+
+    private static Logger log = LogManager.getLogger();
+
     @Parameterized.Parameter
     public JSONObject  json;
 
@@ -26,8 +31,8 @@ public class TestSuite_3 {
     @Test
     public void test()
     {
-        System.out.println( "--- Test name: " + json.get( "test_name"));
-        System.out.println( "     Username: " + json.get( "username"));
-        System.out.println( "     Password: " + json.get( "password"));
+        log.info( "--- Test name: " + json.get( "test_name"));
+        log.info( "     Username: " + json.get( "username"));
+        log.info( "     Password: " + json.get( "password"));
     }
 }

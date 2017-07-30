@@ -1,3 +1,5 @@
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.rules.TestRule;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
@@ -6,6 +8,9 @@ import org.junit.runners.model.Statement;
  * Created by kevin on 7/28/2017.
  */
 public class Retry implements TestRule {
+
+    private static Logger log = LogManager.getLogger();
+
     private int retryCount;
 
     public Retry( int numRetries )
@@ -38,7 +43,8 @@ public class Retry implements TestRule {
                     }
                 }
 
-                System.out.println( "Giving up after " + retryCount + " failures" );
+                log.warn( "Giving up after " + retryCount + " failures" );
+                log.warn( throwable );
                 throw throwable;
             }
         };
