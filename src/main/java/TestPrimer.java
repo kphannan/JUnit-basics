@@ -8,7 +8,11 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses( {
         TestSuite_1.class,
         TestSuite_2.class,
-        TestSuite_3.class
+        TestSuite_3.class,
+        BasicsTest.class,
+        BasicsTestAnnotation.class,
+        BasicsAssert.class,
+        BasicsTestFlow.class
 })
 public class TestPrimer {
 }

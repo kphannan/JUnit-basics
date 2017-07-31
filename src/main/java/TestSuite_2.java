@@ -13,13 +13,13 @@ public class TestSuite_2 extends TestRules {
     @Test
     public void test1()
     {
-        log.trace( "TestSuite_2 Test 1");
+        log.trace("TestSuite_2 Test 1");
     }
 
     @Test
     public void test2()
     {
-        log.trace( "TestSuite_2 Test 2");
+        log.trace("TestSuite_2 Test 2");
     }
 
 }
