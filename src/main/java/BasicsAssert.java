@@ -5,7 +5,7 @@ import org.junit.Test;
 
 
 /**
- * Created by kevin on 7/30/2017.
+ *
  */
 public class BasicsAssert {
     private static Logger log = LogManager.getLogger();

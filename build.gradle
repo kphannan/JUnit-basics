@@ -29,3 +29,14 @@ dependencies {
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.9'
 }
 
+
+test {
+
+//    useTestNG()
+    testLogging.showStandardStreams = true
+
+    beforeTest{ descriptor -> logger.lifecycle("Running test: " + descriptor )}
+
+    onOutput { descriptor,event -> logger.lifecycle("Tests: " + descriptor + " produced std/err: " + event.message )}
+}
+

@@ -15,7 +15,7 @@ public class TestSuite_1 extends TestRules {
     public void test1()
     {
         log.trace( "TestSuite_1 Test 1");
-        Assert.assertTrue( false );
+//        Assert.assertTrue( false );
     }
 
     @Test
