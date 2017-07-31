@@ -1,0 +1,56 @@
+Configuration:
+  name: Default
+
+  Properties:
+    Property:
+      name: log-path
+      value: "logs"
+
+  Appenders:
+    Console:
+      name: Console_Appender
+      target: SYSTEM_OUT
+      PatternLayout:
+        pattern: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+
+    Console:
+      name: Console_Appender_Simple
+      target: SYSTEM_OUT
+      PatternLayout:
+        pattern: "%c{1} - %msg%n"
+
+    File:
+      name: File_Appender
+      fileName: ${log-path}/logfile.log
+      PatternLayout:
+        pattern: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+
+    RollingFile:
+      - name: RollingFile_Appender
+        fileName: ${log-path}/rollingfile.log
+        filePattern: "${log-path}/archive/rollingfile.log.%d{yyyy-MM-dd-hh}.%i.log"
+        PatternLayout:
+          pattern: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+        Policies:
+          SizeBasedTriggeringPolicy:
+            size: 10 KB
+        DefaultRollOverStrategy:
+          max: 5
+
+
+  Loggers:
+
+    Root:
+      level: trace
+      AppenderRef:
+        - ref: Console_Appender_Simple
+          level: info
+        - ref: RollingFile_Appender
+          level: trace
+
+    Logger:
+      - name: com.homedepot.training.collection
+        level: debug
+        AppenderRef:
+          - ref: File_Appender
+
