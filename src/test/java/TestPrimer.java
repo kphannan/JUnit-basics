@@ -12,7 +12,8 @@ import org.junit.runners.Suite;
         BasicsTest.class,
         BasicsTestAnnotation.class,
         BasicsAssert.class,
-        BasicsTestFlow.class
+        BasicsTestFlow.class,
+        junit.examples.AdderTest.class
 })
 public class TestPrimer {
 }

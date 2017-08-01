@@ -13,7 +13,7 @@ public class BasicsTest
     // legacy declaration of a test
     // public voic test<SomeMeaningfulName>()
     @Test
-    @Ignore
+    @Ignore( "Don't want to do this")
     public void testExample()
     {
         log.trace( "testExample()" );

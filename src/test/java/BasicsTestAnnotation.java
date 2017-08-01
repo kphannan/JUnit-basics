@@ -15,8 +15,6 @@ public class BasicsTestAnnotation {
         log.trace( "sampleTestFunction()" );
     }
 
-
-
     @Test
     public void anotherTestFunction()
     {
